@@ -21,9 +21,32 @@ numeros.pop(4)
 print(numeros)
 
 #Creamos otro arreglo de texto
-frutas = ["Manzana", "Fresq", "sandia", "Mango", "Melon", "Platano"]
+frutas = ["Manzana", "Fresa", "sandia", "Mango", "Melon", "Platano"]
 frutas.pop(4)
 print(frutas)
 
 frutas.remove("Manzana")
 print(frutas)
+
+#Declaramos un arreglo vacio
+arreglo = []
+
+""" print (arreglo)
+
+n = int(input("Ingrese el tamaño del arreglo: "))
+
+for i in range (n):
+    dato=int(input("ingrese un numero: "))
+    arreglo.append(dato) 
+
+print("El arreglo es: ",arreglo)  """
+
+n = int(input("Ingrese el tamaño del arreglo: "))
+
+arreglo=[0]*n
+
+for i in range (n):
+    dato=int(input("ingrese un numero: "))
+    arreglo[i]=dato 
+
+print("El arreglo es: ",arreglo)
