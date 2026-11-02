@@ -51,6 +51,47 @@ class ListaEnlazada:
         #cuando ya no hay uno siguiente conecta al nuevo nodo
         actual.siguiente=nuevo_nodo
 
+
+        # metodo para eliminar nodo al inicio de la lista
+    def eliminar_nodo_al_inicio(self):
+
+        # comprobamos si la lista esta vacia
+        if(self.cabeza is None):
+
+            print("La lista esta vacia")
+            return
+
+        # actualizamos la cabeza para que apunte al siguiente nodo
+        self.cabeza = self.cabeza.siguiente
+
+        # metodo para eliminar nodo al final de la lista
+    def eliminar_nodo_al_final(self):
+
+        # comprobamos si la lista esta vacia
+        if(self.cabeza is None):
+
+            print("La lista esta vacia")
+            return
+
+        # comprobamos si solo existe un nodo
+        if(self.cabeza.siguiente is None):
+
+            # eliminamos el unico nodo de la lista
+            self.cabeza = None
+            return
+
+        # referencia temporal al primer nodo
+        actual = self.cabeza
+
+        # avanzar hasta el penultimo nodo
+        while(actual.siguiente.siguiente):
+
+            # actual pasa a ser el siguiente nodo
+            actual = actual.siguiente
+
+        # eliminamos la referencia al ultimo nodo
+        actual.siguiente = None
+
     #metodo para imprimir nuestra lista enlazada 
     def imprimir_ListaEnlazada(self):
         actual = self.cabeza
@@ -68,7 +109,13 @@ class ListaEnlazada:
 
 Mi_lista = ListaEnlazada()
 Mi_lista.insertar_nodo_al_inicio(2)
-Mi_lista.insertar_nodo_al_inicio(3)
-Mi_lista.insertar_nodo_al_final(4)
+Mi_lista.insertar_nodo_al_inicio(1)
+Mi_lista.insertar_nodo_al_final(3)
+Mi_lista.imprimir_ListaEnlazada()
+
+Mi_lista.eliminar_nodo_al_inicio()
+Mi_lista.imprimir_ListaEnlazada()
+
+Mi_lista.eliminar_nodo_al_final()
 Mi_lista.imprimir_ListaEnlazada()
             
